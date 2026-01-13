@@ -2,7 +2,7 @@
 
 ## User Manual
 
-**Version 2.0**
+**Version 1.1.0**
 
 **by Operactive Arts**
 
