@@ -52,13 +52,13 @@ Surtitles-in-a-box is a professional desktop application for displaying live sur
 
 When you first open Surtitles-in-a-box, you'll see the **Entry Code Screen**.
 
-### Entering Your Access Code
+### Entering Your License Key
 
-1. Enter your 22-character access code in the format: `XXXX-YYMMDD-SSSS-SSSS-SSSS`
+1. Enter your license key exactly as shown in your purchase confirmation email from Lemon Squeezy
 2. Check **"Remember this device"** if you want to skip this step next time
 3. Click **Unlock**
 
-> **Note:** Your Device ID is displayed at the bottom of this screen. If you need support, please provide this ID to Operactive Arts.
+> **Note:** An internet connection is required for first-time activation. After activation, the software works offline. Your Device ID is displayed at the bottom of this screen - provide this to Operactive Arts if you need support.
 
 ## Restoring a Previous Session
 
@@ -356,11 +356,25 @@ Presets save your complete show configuration:
 
 # 8. Troubleshooting
 
-## "Invalid Code" on Entry Screen
+## License Key Issues
 
-- Verify you entered the code correctly (including dashes)
-- Codes are case-insensitive
-- Contact Operactive Arts if your code doesn't work
+**"Invalid license key"**
+- Verify you entered the key exactly as shown in your purchase confirmation email
+- Copy and paste the key to avoid typos
+- Check you're using the key for the correct product
+
+**"Unable to connect to license server"**
+- Check your internet connection
+- Try again in a few minutes
+- Contact Operactive Arts if the problem persists
+
+**"This license is already activated on another device"**
+- Each license key works on one device only
+- Contact support@operactive.co.uk to transfer your license to a new device
+
+**"This license expired"**
+- Your license period has ended
+- Purchase a new license to continue using the software
 
 ## Titles Not Appearing
 
@@ -445,6 +459,6 @@ When contacting support, please provide:
 
 ---
 
-*Surtitles-in-a-box User Manual v2.0*
+*Surtitles-in-a-box User Manual v1.1.0*
 *Copyright 2026 Operactive Arts*
 *All rights reserved.*
