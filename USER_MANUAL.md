@@ -2,7 +2,7 @@
 
 ## User Manual
 
-**Version 1.1.0**
+**Version 1.2.0**
 
 **by Operactive Arts**
 
@@ -15,10 +15,13 @@
 3. [The Operator Interface](#3-the-operator-interface)
 4. [Preparing Your Show](#4-preparing-your-show)
 5. [Running a Performance](#5-running-a-performance)
-6. [Keyboard Shortcuts](#6-keyboard-shortcuts)
-7. [Presets](#7-presets)
-8. [Troubleshooting](#8-troubleshooting)
-9. [Quick Reference Card](#9-quick-reference-card)
+6. [Remote Control](#6-remote-control)
+7. [Multi-Language Output](#7-multi-language-output)
+8. [Cue Annotations](#8-cue-annotations)
+9. [Projects](#9-projects)
+10. [Keyboard Shortcuts](#10-keyboard-shortcuts)
+11. [Troubleshooting](#11-troubleshooting)
+12. [Quick Reference Card](#12-quick-reference-card)
 
 ---
 
@@ -35,7 +38,18 @@ Surtitles-in-a-box is a professional desktop application for displaying live sur
 - **Multi-display support** - Operator screen and audience screen on separate monitors
 - **Show-safe controls** - Blackout and freeze buttons, plus panic keyboard shortcut for emergencies
 - **Automatic session recovery** - Never lose your place if the app closes unexpectedly
-- **Preset system** - Save and load complete show configurations
+- **Project system** - Save and load complete show configurations
+- **Remote control** - Control the show from a phone or tablet via WiFi
+- **Multi-language output** - Display two languages simultaneously
+- **Cue annotations** - Add operator notes to any cue
+
+## What's New in Version 1.2.0
+
+- **Remote Control** - Control your show from any phone or tablet on the same WiFi network
+- **Multi-Language Support** - Display primary and secondary languages together (stacked or side-by-side)
+- **Cue Annotations** - Add operator notes to cues for timing hints and reminders
+- **Project Management** - New Project menu in top bar replaces the old Presets section
+- **Background Management** - Rename backgrounds with double-click and reorder by drag-and-drop
 
 ## System Requirements
 
@@ -43,6 +57,7 @@ Surtitles-in-a-box is a professional desktop application for displaying live sur
 - Two displays recommended (operator + audience output)
 - 4GB RAM minimum
 - 500MB disk space
+- WiFi connection (for remote control feature)
 
 ---
 
@@ -74,30 +89,33 @@ If the application finds a previous session, you'll see a prompt:
 The main interface is divided into several areas:
 
 ```
-+------------------------------------------------------------------+
-|                          TOP BAR                                  |
-|  [Load File] [Reload] | Mode: [▼] | filename.txt | Cue 1 of 42 | LIVE |
-+------------------------------------------------------------------+
-|                |                    |                             |
-|   CUE PANEL    |   PREVIEW PANEL    |      CONTROL PANEL          |
-|                |                    |                             |
-|   1. Text...   |   [Live Preview]   |   Output Display: [▼]       |
-|   2. Text...   |                    |   [Start Output]            |
-| > 3. Current   |   [Backgrounds]    |                             |
-|   4. Text...   |   [+Add] [thumb]   |   Show Controls:            |
-|   5. Text...   |                    |   [Titles] [Blackout] [Freeze]|
-|                |                    |                             |
-|                |                    |   Layout & Style...         |
-|                |                    |   Presets...                |
-+------------------------------------------------------------------+
++-------------------------------------------------------------------------+
+|                              TOP BAR                                     |
+| [Project v] [Load File] [Reload] | Mode: [v] | [ProjectName] file.txt | Cue 1/42 | [Remote] | LIVE |
++-------------------------------------------------------------------------+
+|                |                      |                                  |
+|   CUE PANEL    |   PREVIEW PANEL      |      CONTROL PANEL               |
+|                |                      |                                  |
+|   1. Text...   |   [Live Preview]     |   Output Display: [v]            |
+|      Note:...  |                      |   [Start Output]                 |
+| > 2. Current   |   [Backgrounds]      |                                  |
+|      Note:...  |   [+Add] [thumb]     |   Show Controls:                 |
+|   3. Text...   |   [thumb] [thumb]    |   [Titles] [Blackout] [Freeze]   |
+|                |                      |                                  |
+|                |   NEXT: Preview...   |   Layout & Style...              |
+|                |   Note: Next note    |   Languages...                   |
++-------------------------------------------------------------------------+
 ```
 
 ## Top Bar
 
+- **Project** - Dropdown menu for project management (New, Save, Open, Delete)
 - **Load File** - Open a surtitles text file
 - **Reload** - Reload the current file (turns orange when file has changed)
 - **Mode** - Switch between "Line by Line" and "Paragraph" parsing
+- **Project Name** - Shows the current project name (if saved)
 - **Cue Counter** - Shows current position (click to jump to a specific cue)
+- **Remote** - Toggle the remote control panel
 - **LIVE/OFFLINE** - Indicates if the output window is active
 
 ## Cue Panel (Left)
@@ -105,13 +123,17 @@ The main interface is divided into several areas:
 Displays your surtitles as a scrollable list:
 - The current cue is highlighted in cyan
 - Blank cues show "(blank)" tag
+- Annotations appear below cue text with a memo icon
 - Click any cue to jump to it
+- Press **N** to add/edit an annotation on the selected cue
 
 ## Preview Panel (Center)
 
 Shows exactly what the audience will see:
 - Live preview updates as you navigate
-- Background thumbnails at the bottom
+- Current annotation displayed prominently below the preview
+- Next cue preview with its annotation
+- Background thumbnails at the bottom (drag to reorder, double-click to rename)
 - Click **"+ Add"** to add new backgrounds
 
 ## Control Panel (Right)
@@ -120,8 +142,8 @@ All the controls for your show:
 - Display selection and output control
 - Show-safe buttons (Titles, Blackout, Freeze, Calibration)
 - Layout settings (position, size, alignment)
-- Style settings (color, legibility)
-- Preset save/load
+- Style settings (color, fonts, legibility)
+- Languages section (secondary language loading and display mode)
 
 ---
 
@@ -190,6 +212,12 @@ To add a background:
    - Click **"Select File"** for an image or video
    - Choose a color and click **"Add Blank"** for a solid color
 
+### Managing Backgrounds
+
+- **Rename**: Double-click a background label to edit it
+- **Reorder**: Drag and drop backgrounds to rearrange them
+- **Delete**: Hover over a background and click the X button
+
 ## Step 4: Configure Layout
 
 In the Control Panel, adjust:
@@ -201,7 +229,10 @@ In the Control Panel, adjust:
 
 ## Step 5: Configure Style
 
-- **Text Color** - Click the color picker
+- **Primary Text Color** - Color for primary language text
+- **Secondary Text Color** - Color for secondary language text
+- **Primary Font** - Font family for primary language
+- **Secondary Font** - Font family for secondary language
 - **Legibility Mode**:
   - **Text Shadow** - Subtle shadow behind text
   - **Background Box** - Semi-transparent box behind text
@@ -225,13 +256,12 @@ Click the **Calibration** button to show:
 
 Use this to verify your output is properly positioned on the projection surface.
 
-## Step 8: Save Your Preset
+## Step 8: Save Your Project
 
 Once everything is configured:
-1. Scroll to the **Presets** section
-2. Click **"Save Current as Preset"**
-3. Enter a name (e.g., "Carmen Opening Night")
-4. Click **Save**
+1. Click the **Project** dropdown in the top bar
+2. Click **"Save Project"** (or **"Save Project As..."** for a new name)
+3. Enter a project name (e.g., "Carmen Opening Night")
 
 ---
 
@@ -239,7 +269,7 @@ Once everything is configured:
 
 ## Before the Show
 
-1. Load your preset or configure manually
+1. Load your project or configure manually
 2. Start the output window
 3. Navigate to cue 1
 4. Verify titles are hidden (Titles OFF) for audience entry
@@ -307,7 +337,238 @@ If someone edits the surtitles file during the show:
 
 ---
 
-# 6. Keyboard Shortcuts
+# 6. Remote Control
+
+The Remote Control feature lets you control the show from any phone or tablet connected to the same WiFi network.
+
+## Starting Remote Control
+
+1. Click the **Remote** button in the top bar
+2. The Remote Control panel opens on the right side
+3. Click **"Start Remote Server"**
+4. A QR code and URL will appear
+
+## Connecting a Device
+
+### Option A: QR Code
+1. Open your phone's camera
+2. Scan the QR code
+3. Tap the notification to open the link
+
+### Option B: Manual URL
+1. Open a web browser on your phone/tablet
+2. Type the displayed URL (e.g., `http://192.168.1.50:8080`)
+3. Press Enter
+
+### Security (Optional)
+- Enable the PIN option before starting the server
+- Set a 4-digit PIN that users must enter to connect
+- Connected devices are shown in the Remote panel
+- Click "Disconnect" next to any device to remove it
+
+## Remote Interface
+
+The remote interface adapts to screen size:
+
+### Phone (Simplified)
+- Large PREV / NEXT buttons for one-handed operation
+- Current cue display and number
+- Next cue preview
+- Titles and Blackout toggles
+- Background tiles for quick switching
+
+### Tablet (Enhanced)
+- All phone features plus:
+- Scrollable cue list (tap to jump)
+- Freeze toggle
+- Current annotation display
+
+## Remote Control Best Practices
+
+- Test the connection before the show
+- Keep your phone charged
+- Consider a backup operator on the main computer
+- The remote shows connection status - watch for disconnections
+- Background tiles show colors/labels to help identify backgrounds
+
+---
+
+# 7. Multi-Language Output
+
+Display surtitles in two languages simultaneously for international audiences.
+
+## Loading a Secondary Language
+
+1. Load your primary surtitles file first
+2. In the Control Panel, go to the **Languages** section
+3. Click **"Load Secondary File"**
+4. Select your secondary language file
+
+> **Important:** Both files should have the same number of cues. A warning appears if cue counts don't match.
+
+## Display Modes
+
+Choose how languages are displayed:
+
+| Mode | Description |
+|------|-------------|
+| **Primary only** | Show only the primary language |
+| **Secondary only** | Show only the secondary language |
+| **Stacked** | Both languages stacked vertically |
+| **Side by side** | Languages displayed next to each other |
+
+## Configuration Options
+
+When using Stacked or Side-by-side modes:
+
+- **Secondary Position** (Stacked only): Choose if secondary appears above or below primary
+- **Size Ratio**: Adjust relative size of primary vs secondary text (30%-70%)
+
+## Styling Languages
+
+In the Style section:
+- **Primary Text Color**: Color for primary language
+- **Secondary Text Color**: Color for secondary language
+- **Primary Font**: Font for primary language
+- **Secondary Font**: Font for secondary language
+
+## Tips for Multi-Language Shows
+
+- Use distinct colors for each language to help audiences identify them
+- Consider using different fonts (e.g., serif vs sans-serif)
+- Test readability from the back of the venue
+- The Preview Panel shows exactly how both languages will appear
+
+---
+
+# 8. Cue Annotations
+
+Add operator notes to any cue - perfect for timing hints, conductor cues, or stage directions.
+
+## Adding an Annotation
+
+### Method 1: Keyboard
+1. Navigate to the cue
+2. Press **N**
+3. Type your note
+4. Press **Enter** to save (or **Escape** to cancel)
+
+### Method 2: Mouse
+1. Hover over a cue in the Cue Panel
+2. Click the note icon or **[+ Add note]** link
+3. Type your note
+4. Click away or press Enter to save
+
+## Viewing Annotations
+
+Annotations appear in multiple places:
+
+- **Cue Panel**: Below each cue's text with a memo icon
+- **Preview Panel**: Current cue's annotation prominently displayed
+- **Preview Panel**: Next cue's annotation shown in the "NEXT" preview
+- **Remote Control**: Visible on tablet view
+
+## Editing Annotations
+
+1. Click on an existing annotation
+2. Edit the text
+3. Press Enter to save
+4. To delete, clear all text and save
+
+## Annotation Tips
+
+- Keep notes brief - they should be glanceable
+- Use consistent abbreviations (e.g., "Cond." for conductor)
+- Include timing cues: "Wait for aria to finish"
+- Note stage positions: "After Juliet reaches balcony"
+- Mark tricky transitions: "Quick - 2 sec gap"
+
+## Annotations and Projects
+
+Annotations are saved with your project. When you:
+- **Save Project**: All annotations are included
+- **Open Project**: Annotations are restored
+- **Reload File**: Annotations are preserved (warning if cue count changes)
+
+---
+
+# 9. Projects
+
+Projects save your complete show configuration and replace the old Presets system.
+
+## What's Saved in a Project
+
+- Surtitles file path (primary)
+- Secondary surtitles file path (if loaded)
+- Parsing mode
+- All backgrounds
+- Layout settings
+- Style settings
+- Language display settings
+- All cue annotations
+- Selected output display
+
+## Project Menu
+
+Access project functions via the **Project** dropdown in the top bar:
+
+| Option | Description |
+|--------|-------------|
+| **New Project** | Clear everything and start fresh |
+| **Save Project** | Save to current project (prompts for name if new) |
+| **Save Project As...** | Save with a new name |
+| **Open Project...** | Open the project browser |
+| **Delete Project...** | Delete a saved project |
+
+## Creating a New Project
+
+1. Click **Project** → **New Project**
+2. If you have unsaved work, confirm you want to clear it
+3. All settings, cues, and annotations are reset
+
+## Saving Your Work
+
+### First Time Save
+1. Click **Project** → **Save Project**
+2. Enter a project name
+3. Click OK
+
+### Subsequent Saves
+1. Click **Project** → **Save Project**
+2. Project saves immediately to the same name
+
+### Save As New Project
+1. Click **Project** → **Save Project As...**
+2. Enter a new name
+3. Click OK
+
+## Opening a Project
+
+1. Click **Project** → **Open Project...**
+2. A modal shows all saved projects
+3. Current project (if any) is highlighted
+4. Click a project to open it
+5. All settings, files, and annotations are restored
+
+> **Note:** If surtitles files have been moved or deleted, a warning appears.
+
+## Deleting a Project
+
+1. Click **Project** → **Delete Project...**
+2. Enter the project name to delete
+3. Confirm deletion
+4. Project is permanently removed
+
+## Project Tips
+
+- Save projects with descriptive names: "Carmen_2026_MainStage"
+- Create separate projects for different venues
+- Save a new project after significant changes
+- The current project name appears in the top bar
+
+---
+
+# 10. Keyboard Shortcuts
 
 | Key | Action |
 |-----|--------|
@@ -318,43 +579,13 @@ If someone edits the surtitles file during the show:
 | **F** | Toggle freeze |
 | **Escape** | Panic (immediate blackout + hide titles) |
 | **G** | Jump to cue dialog |
+| **N** | Add/edit annotation on current cue |
 
 > **Note:** Shortcuts only work when you're not typing in a text field.
 
 ---
 
-# 7. Presets
-
-Presets save your complete show configuration:
-
-- Surtitles file path
-- Parsing mode
-- All backgrounds
-- Layout settings
-- Style settings
-
-## Saving a Preset
-
-1. Configure your show
-2. Go to **Presets** section in Control Panel
-3. Click **"Save Current as Preset"**
-4. Enter a name and click **Save**
-
-## Loading a Preset
-
-1. Select from the dropdown
-2. Click **Load**
-3. If the surtitles file is missing, you'll see a warning
-
-## Preset Tips
-
-- Create separate presets for different shows
-- Include the date in preset names for revivals
-- Re-save presets after making changes
-
----
-
-# 8. Troubleshooting
+# 11. Troubleshooting
 
 ## License Key Issues
 
@@ -395,6 +626,36 @@ Presets save your complete show configuration:
 - Videos must finish loading before playback is smooth
 - Try smaller file sizes for faster loading
 
+## Remote Control Issues
+
+**Can't connect to remote**
+- Ensure phone/tablet is on the same WiFi network
+- Check the URL is typed correctly
+- Try refreshing the browser
+- Restart the remote server
+
+**Remote disconnects frequently**
+- WiFi signal may be weak
+- Move closer to the router
+- Consider a dedicated WiFi network for the show
+
+**Commands not working from remote**
+- Check connection status indicator
+- Refresh the remote page
+- Restart the remote server if needed
+
+## Multi-Language Issues
+
+**Secondary file won't load**
+- Ensure primary file is loaded first
+- Check file is plain text (.txt)
+- Verify file uses UTF-8 encoding
+
+**Cue count mismatch warning**
+- Both files should have equal cue counts
+- Check for extra blank lines
+- Review file parsing mode
+
 ## App Won't Start
 
 1. Check Windows Firewall isn't blocking it
@@ -409,19 +670,22 @@ Presets save your complete show configuration:
 
 ---
 
-# 9. Quick Reference Card
+# 12. Quick Reference Card
 
 ## Show Day Checklist
 
-- [ ] Load surtitles file
-- [ ] Add/verify backgrounds
-- [ ] Configure layout and style
+- [ ] Open project (or load files manually)
+- [ ] Verify all backgrounds are present
+- [ ] Check secondary language file (if using)
+- [ ] Review annotations for timing cues
 - [ ] Connect output display
 - [ ] Start output
 - [ ] Test calibration
+- [ ] Set up remote control (if using)
+- [ ] Test remote connection
 - [ ] Navigate to cue 1
 - [ ] Hide titles (T)
-- [ ] Save preset
+- [ ] Save project
 
 ## Key Shortcuts
 
@@ -433,6 +697,7 @@ BLACKOUT .......... B
 FREEZE ............ F
 PANIC ............. Escape
 JUMP TO CUE ....... G
+ADD/EDIT NOTE ..... N
 ```
 
 ## Status Indicators
@@ -443,6 +708,22 @@ JUMP TO CUE ....... G
 - **Titles OFF** = Gray button
 - **BLACKOUT** = Red border on button
 - **FROZEN** = Yellow button
+- **Project Name** = Shown in top bar when project is saved
+
+## Remote Control
+
+1. Click **Remote** button
+2. Start server
+3. Scan QR or type URL
+4. Control show from phone/tablet
+
+## Multi-Language Quick Setup
+
+1. Load primary file
+2. Go to Languages section
+3. Load secondary file
+4. Choose display mode (Stacked/Side-by-side)
+5. Adjust colors and fonts
 
 ---
 
@@ -451,14 +732,16 @@ JUMP TO CUE ....... G
 For technical support, please contact:
 
 **Operactive Arts**
+Email: support@operactive.co.uk
 
 When contacting support, please provide:
 - Your Device ID (shown on Entry Code screen)
+- Software version (1.2.0)
 - Description of the problem
 - Screenshots if possible
 
 ---
 
-*Surtitles-in-a-box User Manual v1.1.0*
+*Surtitles-in-a-box User Manual v1.2.0*
 *Copyright 2026 Operactive Arts*
 *All rights reserved.*
