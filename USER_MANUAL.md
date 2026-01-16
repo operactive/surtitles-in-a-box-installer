@@ -2,7 +2,7 @@
 
 ## User Manual
 
-**Version 1.2.0**
+**Version 1.2.1**
 
 **by Operactive Arts**
 
@@ -42,6 +42,13 @@ Surtitles-in-a-box is a professional desktop application for displaying live sur
 - **Remote control** - Control the show from a phone or tablet via WiFi
 - **Multi-language output** - Display two languages simultaneously
 - **Cue annotations** - Add operator notes to any cue
+
+## What's New in Version 1.2.1
+
+- **SRT Subtitle Import** - Import standard SRT subtitle files with timing data
+- **Import Preview** - Preview cues before importing with format-specific options
+- **Encoding Detection** - Automatic detection and manual override for file encodings
+- **Sample Files** - Example surtitle files accessible via Help menu
 
 ## What's New in Version 1.2.0
 
@@ -151,7 +158,13 @@ All the controls for your show:
 
 ## Step 1: Create Your Surtitles File
 
-Create a plain text file (.txt) with your surtitles. Save it in UTF-8 encoding.
+You can use either a **plain text file (.txt)** or an **SRT subtitle file (.srt)**.
+
+> **Tip:** Sample files are available in the Help menu under "Sample Files".
+
+### Plain Text Files (.txt)
+
+Create a plain text file with your surtitles. UTF-8 encoding is recommended, but the app can detect and handle other encodings.
 
 ### Line-by-Line Mode
 Each line becomes one cue. Empty lines create blank (clear screen) cues.
@@ -192,11 +205,45 @@ Welcome to the performance.
 (blank line here for clear screen)
 ```
 
+### SRT Subtitle Files (.srt)
+
+SRT is a standard subtitle format used by video editing software. If you have existing subtitles, you can import them directly.
+
+```
+1
+00:00:05,000 --> 00:00:08,500
+Welcome to tonight's performance.
+
+2
+00:00:10,000 --> 00:00:14,000
+Please silence your mobile phones.
+```
+
+When importing SRT files:
+- Each numbered subtitle block becomes one cue
+- Timing data can be imported as cue annotations (optional)
+- HTML formatting tags (`<i>`, `<b>`) are stripped by default
+
 ## Step 2: Load Your File
 
 1. Click **"Load File"** in the top bar
-2. Select your .txt file
-3. Choose your parsing mode (Line by Line or Paragraph)
+2. Select your file (.txt or .srt)
+3. The **Import Dialog** appears with:
+   - Preview of the first 5 cues
+   - Total cue count
+   - Format-specific options
+
+### Import Options
+
+**For TXT files:**
+- **Encoding**: Auto-detected, with manual override if characters look wrong
+- **Parsing mode**: Line by Line or Paragraph
+
+**For SRT files:**
+- **Import timing as annotations**: Adds timestamp info to cue notes
+- **Strip formatting tags**: Remove `<i>`, `<b>` tags from text
+
+4. Click **Import** to load the cues
 
 ## Step 3: Add Backgrounds (Optional)
 
@@ -736,12 +783,12 @@ Email: support@operactive.co.uk
 
 When contacting support, please provide:
 - Your Device ID (shown on Entry Code screen)
-- Software version (1.2.0)
+- Software version (1.2.1)
 - Description of the problem
 - Screenshots if possible
 
 ---
 
-*Surtitles-in-a-box User Manual v1.2.0*
+*Surtitles-in-a-box User Manual v1.2.1*
 *Copyright 2026 Operactive Arts*
 *All rights reserved.*

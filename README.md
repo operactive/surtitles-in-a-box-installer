@@ -2,11 +2,18 @@
 
 **Professional surtitles software for live opera and theatre performances**
 
-**Current Version: 1.2.0**
+**Current Version: 1.2.1**
 
 ## Download
 
 Download the latest installer from the [Releases](https://github.com/operactive/surtitles-in-a-box-installer/releases) page.
+
+## What's New in v1.2.1
+
+- **SRT Subtitle Import** - Import standard SRT subtitle files with timing data
+- **Import Preview** - Preview cues before importing with format-specific options
+- **Encoding Detection** - Automatic detection and manual override for file encodings
+- **Sample Files** - Example surtitle files accessible via Help menu
 
 ## What's New in v1.2.0
 
@@ -27,6 +34,7 @@ Download the latest installer from the [Releases](https://github.com/operactive/
 - Remote control via phone/tablet
 - Multi-language output support
 - Cue annotations for operator notes
+- SRT subtitle file import
 
 ## Documentation
 
