@@ -2,11 +2,21 @@
 
 **Professional surtitles software for live opera and theatre performances**
 
-**Current Version: 1.2.1**
+**Current Version: 1.3.0**
 
 ## Download
 
 Download the latest installer from the [Releases](https://github.com/operactive/surtitles-in-a-box-installer/releases) page.
+
+## What's New in v1.3.0
+
+- **Multi-Output Windows** - Run multiple projection screens with independent settings
+- **Audience View** - Let audience view surtitles on their phones via QR code
+- **Programme Notes** - Push synopses or context to audience devices
+- **Output Profiles** - Save and reuse per-output configurations
+- **Director PIN Protection** - Optional 4-digit PIN for remote control security
+- **Audience Lobby** - Display selector for QR code screen
+- **UI Overhaul** - New design system with StatusBar and modals
 
 ## What's New in v1.2.1
 
@@ -28,13 +38,17 @@ Download the latest installer from the [Releases](https://github.com/operactive/
 - Manual cue-by-cue navigation
 - Background virtual screens (images, videos, solid colors)
 - Multi-display support with fullscreen audience output
+- Multi-output windows with independent settings
 - Show-safe controls (Blackout, Freeze, Titles toggle)
 - Automatic session recovery
 - Project save/load system
-- Remote control via phone/tablet
+- Remote control via phone/tablet with optional PIN protection
+- Audience view via QR code for mobile surtitle viewing
+- Programme notes for pushing context to audience devices
 - Multi-language output support
 - Cue annotations for operator notes
 - SRT subtitle file import
+- Output profiles for saving display configurations
 
 ## Documentation
 

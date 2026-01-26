@@ -2,7 +2,7 @@
 
 ## User Manual
 
-**Version 1.2.1**
+**Version 1.3.0**
 
 **by Operactive Arts**
 
@@ -19,9 +19,13 @@
 7. [Multi-Language Output](#7-multi-language-output)
 8. [Cue Annotations](#8-cue-annotations)
 9. [Projects](#9-projects)
-10. [Keyboard Shortcuts](#10-keyboard-shortcuts)
-11. [Troubleshooting](#11-troubleshooting)
-12. [Quick Reference Card](#12-quick-reference-card)
+10. [Multi-Output Windows](#10-multi-output-windows) *(NEW)*
+11. [Audience View](#11-audience-view) *(NEW)*
+12. [Programme Notes](#12-programme-notes) *(NEW)*
+13. [Output Profiles](#13-output-profiles) *(NEW)*
+14. [Keyboard Shortcuts](#14-keyboard-shortcuts)
+15. [Troubleshooting](#15-troubleshooting)
+16. [Quick Reference Card](#16-quick-reference-card)
 
 ---
 
@@ -42,6 +46,14 @@ Surtitles-in-a-box is a professional desktop application for displaying live sur
 - **Remote control** - Control the show from a phone or tablet via WiFi
 - **Multi-language output** - Display two languages simultaneously
 - **Cue annotations** - Add operator notes to any cue
+
+## What's New in Version 1.3.0
+
+- **Multi-Output Windows** - Run multiple projection screens with independent settings (font size, position, language)
+- **Audience View** - Let audience members view surtitles on their phones via QR code
+- **Programme Notes** - Push synopses or context to audience devices during intervals
+- **Output Profiles** - Save and reuse per-output configurations across shows
+- **Font Size Selection** - Audience can adjust text size on their devices
 
 ## What's New in Version 1.2.1
 
@@ -388,12 +400,13 @@ If someone edits the surtitles file during the show:
 
 The Remote Control feature lets you control the show from any phone or tablet connected to the same WiFi network.
 
-## Starting Remote Control
+## Starting Director Remote
 
-1. Click the **Remote** button in the top bar
-2. The Remote Control panel opens on the right side
-3. Click **"Start Remote Server"**
-4. A QR code and URL will appear
+1. Click **"Start Director Remote View"** in the Status Bar at the bottom
+2. The Director Remote modal opens with setup options
+3. Optionally enable PIN protection (see below)
+4. Click **"Start Director Remote"**
+5. A QR code and URL will appear
 
 ## Connecting a Device
 
@@ -407,11 +420,16 @@ The Remote Control feature lets you control the show from any phone or tablet co
 2. Type the displayed URL (e.g., `http://192.168.1.50:8080`)
 3. Press Enter
 
-### Security (Optional)
-- Enable the PIN option before starting the server
-- Set a 4-digit PIN that users must enter to connect
-- Connected devices are shown in the Remote panel
-- Click "Disconnect" next to any device to remove it
+### PIN Protection (Optional)
+Before starting the Director Remote:
+1. Tick **"Require PIN for access"** in the setup screen
+2. Enter a 4-digit PIN or click **"Generate"** for a random PIN
+3. Start the server
+4. Directors scanning the QR code must enter the PIN to connect
+5. The PIN is displayed in the modal so you can share it with authorised directors
+6. Connected devices are shown in the modal - click the X to disconnect any device
+
+> **Note:** There is no lockout after failed PIN attempts, keeping things simple for live theatre environments.
 
 ## Remote Interface
 
@@ -615,7 +633,229 @@ Access project functions via the **Project** dropdown in the top bar:
 
 ---
 
-# 10. Keyboard Shortcuts
+# 10. Multi-Output Windows
+
+Display surtitles on multiple projection screens simultaneously, each with independent settings.
+
+## Why Use Multiple Outputs?
+
+- **Different screen sizes** - Large main screen may need larger text than a balcony monitor
+- **Different languages** - Show primary language on one screen, secondary on another
+- **Backup display** - Run a backup output in case one screen fails
+- **Different venues** - Save configurations for each screen in your regular venues
+
+## Adding an Output
+
+1. In the Control Panel, find the **Output Windows** section
+2. Click **"+ Add Output"**
+3. The Output Configuration modal opens
+
+## Configuring an Output
+
+### General Tab
+- **Output Name** - Give it a descriptive name (e.g., "Main Screen", "Balcony")
+- **Display** - Select which monitor to use
+- **Language Mode** - Choose primary only, secondary only, or both languages
+- **Always on Top** - Keep the output above other windows
+
+### Layout Tab
+- **Horizontal Alignment** - Left, center, or right
+- **Vertical Position** - Where on screen (0-100%)
+- **Font Size** - Independent size for this output
+- **Safe Margins** - Keep text away from screen edges
+
+### Style Tab
+- **Text Colors** - Primary and secondary colors
+- **Fonts** - Choose fonts for each language
+- **Legibility Mode** - Shadow, box, or none
+
+## Starting Multiple Outputs
+
+1. Configure each output with its desired display
+2. Click **Start** on each output you want to run
+3. All active outputs sync to the same cue
+4. The output list shows active count
+
+## Managing Outputs During a Show
+
+- **Start/Stop** - Toggle individual outputs without affecting others
+- **Edit** - Change settings on the fly (takes effect immediately)
+- **Remove** - Delete an output configuration
+
+## Output Configuration Tips
+
+- Configure and test all outputs before the show
+- Name outputs clearly: "Main_72px" or "Balcony_48px"
+- Save your configurations as a project
+- Consider creating output profiles for common setups
+
+---
+
+# 11. Audience View
+
+Let audience members view surtitles on their personal devices - ideal for accessibility or large venues.
+
+## Enabling Audience View
+
+1. Click **"Start Audience Remote View"** in the Status Bar at the bottom
+2. A display selector popup appears - choose which screen to show the QR code lobby
+3. Click **"Start"** to open the lobby on the selected display
+4. The lobby shows a large QR code for audience members to scan
+
+## Sharing with Audience
+
+The lobby screen displays:
+- **Large QR Code** - Audience scan with their phone camera
+- **Connected viewer count** - See how many are connected
+
+To close the lobby, click the X button in the corner or press Escape.
+
+You can also share the URL directly (shown in the Audience modal) via social media, email, or printed programmes.
+
+## How Audience View Differs from Remote Control
+
+| Feature | Operator Remote | Audience View |
+|---------|-----------------|---------------|
+| Control cues | Yes | No |
+| See controls | Yes | No |
+| Requires PIN | Optional | No |
+| Font size | Fixed | Adjustable |
+| Purpose | Run the show | View surtitles |
+
+## Audience Delay
+
+Add a delay to prevent audience reading ahead of the performance:
+
+1. Go to the Audience tab
+2. Adjust the **Delay** slider (0-5000ms)
+3. Audience devices receive updates after the delay
+
+> **Tip:** A 1-2 second delay helps ensure audience members don't read lines before performers speak them.
+
+## Audience Device Features
+
+On their phones, audience members can:
+- **View surtitles** in real-time
+- **Adjust font size** (Small/Medium/Large/Extra Large)
+- **Choose language** if multiple languages are loaded
+- **See context cards** when you push them
+
+## Best Practices
+
+- Test from audience perspective before the show
+- Include QR code in printed programmes
+- Announce the feature in pre-show announcements
+- Consider a short delay to preserve the live experience
+- Monitor audience viewer count in the Remote panel
+
+---
+
+# 12. Programme Notes
+
+Push programme notes, synopses, or explanations to audience devices during performances.
+
+## What Are Programme Notes?
+
+Programme notes are text panels displayed on audience devices (not the main projection). Use them for:
+- **Act summaries** - Brief synopsis before each act
+- **Character introductions** - Who's who in the opera
+- **Historical context** - Background information
+- **Interval content** - Keep audience engaged during breaks
+
+## Creating a Programme Note
+
+1. Click **Programme Notes** in the top bar to open the modal
+2. Click on a cue to add a note linked to that cue, or click **"+ Add Manual Note"**
+3. Fill in:
+   - **Title** - Note heading (e.g., "Act 2 Synopsis")
+   - **Content** - The main text to display
+   - **Display Duration** - How long it shows (0 = until dismissed)
+
+## Note Types
+
+### Manual Notes
+Push when you decide using the Status Bar quick-push buttons:
+1. Manual notes appear as buttons in the Status Bar at the bottom
+2. Click a note button to push it to all audience devices
+3. Click the X on the active note indicator to dismiss
+
+### Cue-Linked Notes
+Automatically push when reaching a specific cue:
+1. In the Programme Notes modal, click on a cue in the left panel
+2. Create a note linked to that cue
+3. The note pushes automatically when you navigate to that cue
+
+## Managing Programme Notes
+
+- **Status Bar** - Quick-push buttons for manual notes only
+- **Programme Notes Modal** - View and manage all notes (manual + cue-linked)
+- **Edit** - Click a note in the modal to modify it
+- **Delete** - Remove notes via the modal
+- **Active indicator** - Shows which note is currently displayed
+
+## Tips for Programme Notes
+
+- Keep notes brief - audience are reading on phones
+- Use manual notes during intervals or scene changes
+- Use cue-linked notes for automatic context at specific moments
+- Notes are saved with your project
+
+---
+
+# 13. Output Profiles
+
+Save and reuse output configurations across different shows and venues.
+
+## What Is a Profile?
+
+A profile saves:
+- Layout settings (font size, position, alignment)
+- Style settings (colors, fonts, legibility mode)
+- Language mode
+
+Profiles do NOT save:
+- Display selection (varies by computer)
+- Output name
+
+## Creating a Profile
+
+1. Configure an output with your desired settings
+2. Click **"Save as Profile..."** in the output modal footer
+3. Enter a profile name
+4. Click **Save Profile**
+
+## Applying a Profile
+
+1. Open output configuration (Edit an output or Add new)
+2. Go to the **General** tab
+3. Select a profile from the **"Apply Profile"** dropdown
+4. Settings are applied instantly
+5. Make any additional adjustments
+6. Save the output
+
+## Managing Profiles
+
+Access profile management through the output configuration modal:
+- Profiles are listed in the Apply Profile dropdown
+- Delete profiles through the Profile Manager
+
+## Profile Use Cases
+
+- **"Large Venue"** - 72px font, high contrast colors
+- **"Intimate Space"** - 48px font, subtle styling
+- **"Opera House Main"** - Specific settings for your regular venue
+- **"Touring Default"** - General-purpose starting point
+
+## Tips
+
+- Name profiles descriptively
+- Create profiles for each regular venue
+- Share profile files between computers by copying from the profiles folder
+- Profiles persist across software updates
+
+---
+
+# 14. Keyboard Shortcuts
 
 | Key | Action |
 |-----|--------|
@@ -632,7 +872,7 @@ Access project functions via the **Project** dropdown in the top bar:
 
 ---
 
-# 11. Troubleshooting
+# 15. Troubleshooting
 
 ## License Key Issues
 
@@ -717,7 +957,7 @@ Access project functions via the **Project** dropdown in the top bar:
 
 ---
 
-# 12. Quick Reference Card
+# 16. Quick Reference Card
 
 ## Show Day Checklist
 
@@ -783,12 +1023,12 @@ Email: support@operactive.co.uk
 
 When contacting support, please provide:
 - Your Device ID (shown on Entry Code screen)
-- Software version (1.2.1)
+- Software version (1.3.0)
 - Description of the problem
 - Screenshots if possible
 
 ---
 
-*Surtitles-in-a-box User Manual v1.2.1*
+*Surtitles-in-a-box User Manual v1.3.0*
 *Copyright 2026 Operactive Arts*
 *All rights reserved.*
