@@ -2,7 +2,7 @@
 
 ## User Manual
 
-**Version 1.3.0**
+**Version 1.3.1**
 
 **by Operactive Arts**
 
@@ -1023,12 +1023,12 @@ Email: support@operactive.co.uk
 
 When contacting support, please provide:
 - Your Device ID (shown on Entry Code screen)
-- Software version (1.3.0)
+- Software version (1.3.1)
 - Description of the problem
 - Screenshots if possible
 
 ---
 
-*Surtitles-in-a-box User Manual v1.3.0*
+*Surtitles-in-a-box User Manual v1.3.1*
 *Copyright 2026 Operactive Arts*
 *All rights reserved.*
