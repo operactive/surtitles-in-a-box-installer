@@ -2,11 +2,15 @@
 
 **Professional surtitles software for live opera and theatre performances**
 
-**Current Version: 1.3.0**
+**Current Version: 1.3.1**
 
 ## Download
 
 Download the latest installer from the [Releases](https://github.com/operactive/surtitles-in-a-box-installer/releases) page.
+
+## What's New in v1.3.1
+
+- **Bug Fix** - Director and Audience remote modes now start/stop completely independently
 
 ## What's New in v1.3.0
 
